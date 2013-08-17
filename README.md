@@ -50,9 +50,12 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 
 	inspect($(selection))
 
-	insprct($("h1"));
+	inspect($("h1"));
 	inspect($(".row"));
 	inspect($("#chrome-logo"));
+
+	// Monitor events
+	monitorEvents($("h1"), "mouse");
 
 	// Shortcuts
 	Shitft-Ctrl-I, F12		- invoke Chrome Dev Tools
@@ -60,6 +63,10 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 
 	// Other commands
 	clear()
+
+## Documentation ##
+
+- [Chrome DevTools](https://developers.google.com/chrome-developer-tools/)
 
 ## Related articles ##
 
