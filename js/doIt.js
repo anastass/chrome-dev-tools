@@ -37,13 +37,14 @@ function stepTwo() {
 
 function stepThree() {
 	//debugger; /* calling debugger */
-	for (var i = 0; i < 10000; i++) {
-		if (i % 100 == 0) {
-			console.timeStamp("Setting " + i);
-		}
-		localStorage.setItem("buggy", i);
-		//var d = document.createElement("div");
-		//document.getElementByTagName("body")[0].appendChild(d);
+	for (var i = 0; i < 1000; i++) {
+		// if (i % 100 == 0) {
+		// 	console.timeStamp("Setting " + i);
+		// }
+		// localStorage.setItem("buggy", i);
+
+		var d = document.createElement("div");
+		document.getElementByTagName("body")[0].appendChild(d);
 	};
 	console.debug("Simulate error");
 	console.error("Error");
