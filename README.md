@@ -86,6 +86,17 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 	     when analyzing Network trafic
 
 # Sources and Audit Panels #
+	Tips: 
+		Use 'Pretty print' (see "{}" button) to view minified JavaScript
+		Use 'Pause on all exceptions' to get more information of what happens
+
+	Enable Event Listener Brekpoints | Mouse | click checkbox and click on Load Resources Data button.  
+
+	Note: To test worker using local file with with chrome you have to use 
+	      option '--allow-file-access-from-file'
+
+# Timeline and Profiles Panels #
+
 
 # Miscellaneous ##
 
@@ -106,6 +117,8 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 - [Cookbook Demo](http://ie.microsoft.com/testdrive/HTML5/Cookbook/) - leverage HTML5 AppCache and IndexedDB
 
 ## Other ##
+	// Web server 
+	Use 'php -S localhost:80' to avoid the problems when accessing local file system.
 
 	// SublimeText 2
 	Use Shift-Ctrl-[ to fold code

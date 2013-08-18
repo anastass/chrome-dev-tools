@@ -11,8 +11,16 @@ function doIt() {
 		console.groupEnd();
 	console.timeEnd("Steps time");
 
+	document.getElementById('chrome-logo').className = "smallimage";
+
 	useAssert();
 	LoadResourceData();
+
+	var worker = new Worker('js/task.js');
+	worker.onmessage = function (e) {
+		console.log(e.data);
+	}
+	worker.postMessage("Joe");
 }
 
 function stepOne() {
