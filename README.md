@@ -96,7 +96,13 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 	      option '--allow-file-access-from-file'
 
 # Timeline and Profiles Panels #
+	Note: 
+		Do not forget to click on Record button to get some data
+		Use Shift-Refresh when using Chrome Dev Tools to get a fresh copy of all resources
+		A help will be shownt if '?' button is pressed (Profiles tab)		
 
+	To create time line use:
+		console.timeStamp(<label>);
 
 # Miscellaneous ##
 
@@ -114,7 +120,8 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 
 - [Ten cool Chrome tricks you can use right now](http://www.techrepublic.com/blog/google-in-the-enterprise/ten-cool-chrome-tricks-you-can-use-right-now/)
 - [Google Chrome Shortcuts](http://chromecheat.blogspot.co.at/2008/09/google-chrome-shortcuts.html)
-- [Cookbook Demo](http://ie.microsoft.com/testdrive/HTML5/Cookbook/) - leverage HTML5 AppCache and IndexedDB
+- [Cookbook Demo](http://ie.microsoft.com/testdrive/HTML5/Cookbook/) - leverage HTML5 AppCache and IndexedD
+- [Code Folding in Sublime Text 2](http://wesbos.com/sublime-text-code-folding/)
 
 ## Other ##
 	// Web server 
