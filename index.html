@@ -2,7 +2,7 @@
 	<head>
 		<title>Using The Chrome Developer Tools</title>
 		<link rel="stylesheet" href="css/style.css">
-		<script type="text/javascript" src="js/doIt.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
 		<h1>Using The Chrome Developer Tools</h1>
@@ -14,7 +14,9 @@
 			Course <a href="http://bit.ly/16jMKsU">Using The Chrome Developer Tools</a> by John Sonmez
 		</footer>	
 		<script>
-			doIt();
+			if (typeof doIt == 'function') { 
+				doIt();
+			}
 		</script>
 	</body>
 </html>
