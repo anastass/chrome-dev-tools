@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var thisDB = e.target.result;
  
         if(!thisDB.objectStoreNames.contains("people")) {
-            thisDB.createObjectStore("people");
+            thisDB.createObjectStore("people", {autoIncrement:true});
         }
     }
  
@@ -59,7 +59,7 @@ function addPerson(e) {
     }
  
     //Perform the add
-    var request = store.add(person,1);
+    var request = store.add(person);
  
     request.onerror = function(e) {
         console.log("Error",e.target.error.name);
