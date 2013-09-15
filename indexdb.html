@@ -23,7 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
         var thisDB = e.target.result;
  
         if(!thisDB.objectStoreNames.contains("people")) {
-            thisDB.createObjectStore("people", {autoIncrement:true});
+            var objectStore = thisDB.createObjectStore("people", {autoIncrement:true});
+
+            //first arg is name of index, second is the path (col);
+            objectStore.createIndex("name","name", {unique:false});
+            objectStore.createIndex("email","email", {unique:true});
         }
     }
  
@@ -36,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#addButton").addEventListener("click", addPerson, false);
         document.querySelector("#getButton").addEventListener("click", getPerson, false);
         document.querySelector("#getAllButton").addEventListener("click", getPeople, false);
-    }
+        document.querySelector("#getPeopleByRange").addEventListener("click", getPeopleByRange, false);
+     }
  
     openRequest.onerror = function(e) {
         //Do something for the error
@@ -81,7 +86,14 @@ function getPerson(e) {
     var store = transaction.objectStore("people");
  
     var request = store.get(Number(key));
- 
+    /*
+        // above example with index by name
+        var index = store.index("name");
+         
+        //name is some value
+        var request = index.get(name);
+    */
+
     request.onsuccess = function(e) {
  
         var result = e.target.result;
@@ -115,6 +127,45 @@ function getPeople(e) {
         document.querySelector("#status").innerHTML = s;
     }
 }
+
+
+function getPeopleByRange(e) {
+    console.log("getPeopleByRange");
+    var name = document.querySelector("#nameSearch").value;
+ 
+    var endname = document.querySelector("#nameSearchEnd").value;
+ 
+    if(name == "" && endname == "") return;
+ 
+    var transaction = db.transaction(["people"],"readonly");
+    var store = transaction.objectStore("people");
+    var index = store.index("name");
+ 
+    //Make the range depending on what type we are doing
+    var range;
+    if(name != "" && endname != "") {
+        range = IDBKeyRange.bound(name, endname);
+    } else if(name == "") {
+        range = IDBKeyRange.upperBound(endname);
+    } else {
+        range = IDBKeyRange.lowerBound(name);
+    }
+ 
+    var s = "";
+ 
+    index.openCursor(range).onsuccess = function(e) {
+        var cursor = e.target.result;
+        if(cursor) {
+            s += "<h2>Key "+cursor.key+"</h2><p>";
+            for(var field in cursor.value) {
+                s+= field+"="+cursor.value[field]+"<br/>";
+            }
+            s+="</p>";
+            cursor.continue();
+        }
+        document.querySelector("#status").innerHTML = s;
+    }
+}
 </script>
  
 <input type="text" id="name" placeholder="Name"><br/>
@@ -125,6 +176,11 @@ function getPeople(e) {
 <input type="number" id="key" placeholder="Key" value="1"><br/>
 <button id="getButton">Get Data</button><br/>
 <button id="getAllButton">Get All</button><br/>
+<br/>
+
+Starting with: <input type="text" id="nameSearch" placeholder="Name">&nbsp;
+Ending with: <input type="text" id="nameSearchEnd" placeholder="Name">&nbsp;
+<button id="getPeopleByRange">Get By Name Range</button>
 
 <div id="status"></div>
 </body>

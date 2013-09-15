@@ -105,7 +105,21 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 		console.timeStamp(<label>);
 
 # Miscellaneous ##
-[Working With IndexedDB](http://net.tutsplus.com/tutorials/javascript-ajax/working-with-indexeddb/) by Raymond Camden
+	Contains demo of IndexedDB -- see indexdb.html file
+
+	Note: 
+		To delete IndexedDB: 
+			go to Settings | Show advanced settings... | Privacy
+			choose Content settings... | All cookies and site data..
+			search for the domain and delete Indexed database (Database storage)
+
+		To delete data: 
+			use mouse right click over IndexedDB and choose Clear
+
+
+- [Working With IndexedDB](http://net.tutsplus.com/tutorials/javascript-ajax/working-with-indexeddb/) by Raymond Camden
+- [Playing with SVG and JavaScript](http://www.raymondcamden.com/index.cfm/2013/2/5/Playing-with-SVG-and-JavaScript) by Raymond Camden
+- [Video of my HTML5 Storage presentation](http://www.raymondcamden.com/index.cfm/2012/9/10/Video-of-my-HTML5-Storage-presentation)
 
 ## Documentation ##
 
