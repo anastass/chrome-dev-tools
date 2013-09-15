@@ -105,6 +105,7 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 		console.timeStamp(<label>);
 
 # Miscellaneous ##
+[Working With IndexedDB](http://net.tutsplus.com/tutorials/javascript-ajax/working-with-indexeddb/) by Raymond Camden
 
 ## Documentation ##
 
@@ -122,6 +123,8 @@ Code based on Using The Chrome Developer Tools with John Sonmez (pluralsight.com
 - [Google Chrome Shortcuts](http://chromecheat.blogspot.co.at/2008/09/google-chrome-shortcuts.html)
 - [Cookbook Demo](http://ie.microsoft.com/testdrive/HTML5/Cookbook/) - leverage HTML5 AppCache and IndexedD
 - [Code Folding in Sublime Text 2](http://wesbos.com/sublime-text-code-folding/)
+- [Can I Use](http://caniuse.com/)
+- [Check if Function Exists Before Calling](http://css-tricks.com/snippets/javascript/check-if-function-exists-before-calling/)
 
 ## Other ##
 	// Web server 
